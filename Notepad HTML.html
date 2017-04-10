@@ -1,0 +1,128 @@
+<html>
+<head>
+	<title>
+		Notepad in HTML
+	</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<script src="js\jquery-3.2.0.js"></script>
+	<script src="js\FileSaver.js"></script>
+	<script>
+		function onClickNew(){
+			//document.getElementById("new").click();
+			document.getElementById("MyText").value = ""
+			document.getElementById("name").value = ""
+			//var fetchp = document.getElementById("div1");
+			//var pp = document.createElement("p")
+			//console.log(document.getElementById("MyText").value)
+			//var node = document.createTextNode(document.getElementById("MyText").value);
+			//pp.appendChild(node);
+			//fetchp.appendChild(pp);
+		}
+	</script>
+	<script>
+		function onClickSave(){
+			var para = document.getElementById("MyText").value
+			console.log(para)
+			var ext = document.getElementById("ext").value
+			var filename
+			if(ext == "python"){
+				filename = document.getElementById("name").value + ".py"
+				console.log(filename)
+			}
+			else if(ext == "text"){
+				filename = document.getElementById("name").value + ".txt"
+				console.log(filename)
+			}
+			else if(ext == "java"){
+				filename = document.getElementById("name").value + ".java"
+				console.log(filename)
+			}
+			else{
+				filename = document.getElementById("name").value + ".cpp"
+				console.log(filename)
+			}
+			var blob = new Blob([para], {type: "text/plain;charset=utf-8"});
+  			saveAs(blob, filename);
+  			delete blob;
+		}
+	</script>
+	<style>
+		body{
+			background-image: url("img\\Blue.jpg");
+		}
+		textarea[id="MyText"]{
+    		height: 500px;
+    		width: 1200px;
+    		color: White;
+    		background-image: url("img\\Gray-Bk.jpg");
+    		vertical-align: center;
+    		position: static;
+    		resize: none;
+    		margin-left: 75px;
+		}
+		input[id="new"]{
+			margin-left: 75px;
+			height: 30px;
+			width: 30px;
+		}
+		input[id="save"]{
+			margin-left: 15px;
+			height: 30px;
+			width: 30px;
+		}
+		a{
+			margin-left: 525px;
+			color: LightGrey;
+			font-size: 30px;
+			font-style: 4;
+
+		}
+		p[id="footer"]{
+			margin-left: 525px;
+			color : Black;
+			font-size: 15px;
+		}
+		p[id="footer2"]{
+			margin-left: 560px;
+			color : BLACK;
+			font-size: 15px
+		}
+		select[id="ext"]{
+			margin-left:100px;
+		}
+		input[id="name"]{
+			margin-left: 0px;
+		}
+		label[id="nm"]{
+			margin-left: 695px;
+			color: White;
+		}
+	</style>
+</head>
+
+
+<body>
+	<a href="Notepad HTML.html">Notepad in HTML</a>
+	<p>
+		<input type="image" src = "img-btn\New.png" id="new" onclick="onClickNew()">
+		<input type="image" src = "img-btn\Save.png" id="save" onclick="onClickSave()"/>
+		<label id="nm">File Name</label>
+		<input type="text" id="name"/>
+		<select id="ext">
+			<option value="text">Text File</option>
+			<option value="cpp">C++</option>
+			<option value="python">Python</option>
+			<option value="java">Java</option>
+		</select>
+		<br><br>
+		<textarea id="MyText" name="paragraph_text" cols="50" rows="10"></textarea>
+	</p>
+	<p id="footer">Made with sheer Knowledge!</p>
+	<p id="footer2">-Manish Devgan</p> 
+	</p>
+	<div id="div1">
+	</div>
+</body>
+
+
+
