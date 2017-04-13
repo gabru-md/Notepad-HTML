@@ -1,3 +1,4 @@
+
 <html>
 <head>
 	<title>
@@ -37,9 +38,12 @@
 				filename = document.getElementById("name").value + ".java"
 				console.log(filename)
 			}
-			else{
+			else if(ext == "cpp"){
 				filename = document.getElementById("name").value + ".cpp"
 				console.log(filename)
+			}
+			else{
+				filename = document.getElementById("name").value + ".html"
 			}
 			var blob = new Blob([para], {type: "text/plain;charset=utf-8"});
   			saveAs(blob, filename);
@@ -48,13 +52,15 @@
 	</script>
 	<style>
 		body{
-			background-image: url("img\\Blue.jpg");
+			background-image: url("img\\bk2.jpg");
+			background-repeat: no-repeat;
 		}
 		textarea[id="MyText"]{
     		height: 500px;
     		width: 1200px;
     		color: White;
-    		background-image: url("img\\Gray-Bk.jpg");
+    		background-image: url("img\\Joker.jpg");
+    		background-size: 1200px 500px;
     		vertical-align: center;
     		position: static;
     		resize: none;
@@ -71,11 +77,10 @@
 			width: 30px;
 		}
 		a{
-			margin-left: 525px;
+			margin-left: 580px;
 			color: LightGrey;
 			font-size: 30px;
 			font-style: 4;
-
 		}
 		p[id="footer"]{
 			margin-left: 525px;
@@ -88,7 +93,7 @@
 			font-size: 15px
 		}
 		select[id="ext"]{
-			margin-left:100px;
+			margin-left:0px;
 		}
 		input[id="name"]{
 			margin-left: 0px;
@@ -102,7 +107,8 @@
 
 
 <body>
-	<a href="Notepad HTML.html">Notepad in HTML</a>
+	<a href="index.html">Note-Me</a>
+	
 	<p>
 		<input type="image" src = "img-btn\New.png" id="new" onclick="onClickNew()">
 		<input type="image" src = "img-btn\Save.png" id="save" onclick="onClickSave()"/>
@@ -113,7 +119,9 @@
 			<option value="cpp">C++</option>
 			<option value="python">Python</option>
 			<option value="java">Java</option>
+			<option value="html">HTML</option>
 		</select>
+		<a href="https://github.com/gabru-md/Notepad-HTML"><img style="position: absolute; top: 0; right: 0; border: 0;" src="img\forkme_right_red_aa0000.png" alt="Fork me on GitHub" data-canonical-src="img\forkme_right_red_aa0000.png"></a>
 		<br><br>
 		<textarea id="MyText" name="paragraph_text" cols="50" rows="10"></textarea>
 	</p>
@@ -124,5 +132,3 @@
 	</div>
 </body>
 </html>
-
-
