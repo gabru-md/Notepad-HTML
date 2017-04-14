@@ -21,6 +21,7 @@ Text - .txt
 C++ - .cpp
 Python - .py
 Java - .java
+HMTL - .html
 
 # Contributor
 # gabru-md
